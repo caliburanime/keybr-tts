@@ -1,13 +1,28 @@
 {
   "manifest_version": 3,
-  "name": "Keybr TTS",
+  "name": "Keybr-tss",
   "version": "1.0",
   "description": "Adds TTS pronunciation to Keybr.com",
-  "permissions": ["scripting", "activeTab"],
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.keybr.com/*"
+  ],
   "content_scripts": [
     {
       "matches": ["https://www.keybr.com/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "keybr-tts@yourname.com",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": []
+      }
+    }
+  }
 }
