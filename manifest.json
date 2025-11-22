@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Keybr TTS",
+  "version": "1.0",
+  "description": "Adds TTS pronunciation to Keybr.com",
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.keybr.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
